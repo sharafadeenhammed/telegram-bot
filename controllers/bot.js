@@ -9,7 +9,7 @@ const botRequest = asyncHandeler(async (req, res, next) => {
   try {
     const response = await client.post(process.env.BOT_REPLY_MESSSAGE_URL, {
       chat_id: 1110216936,
-      text: `mirrow: ${data.message}`,
+      text: `mirrow: ${data.message.text}`,
     });
     res.status(200).json(response.data);
   } catch (error) {
