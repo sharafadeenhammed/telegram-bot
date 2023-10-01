@@ -1,19 +1,18 @@
 import express from "express";
 import morgan from "morgan";
-import dotenv from "dotenv";
-// ngrok http --domain=modest-antelope-merry.ngrok-free.app 80
+import dotenv, { config } from "dotenv";
 
+import connectDb from "./db/connectDb.js";
 import bot from "./routes/bot.js";
 
-const server = express();
 dotenv.config();
+const server = express();
+connectDb(); // connect to database...
 
 server.use(express.json());
 server.use(express.urlencoded({ extended: false }));
 server.use((req, res, next) => {
-  console.log("resquest data: ", req.body);
-  console.log("\nresponse data: ", res.data);
-
+  // console.log("resquest data: ", req.body);
   next();
 });
 server.use(morgan("dev"));

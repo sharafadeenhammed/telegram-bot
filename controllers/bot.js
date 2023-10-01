@@ -6,14 +6,39 @@ import client from "../client/client.js";
 //@ desc receive message payload from bot
 const botRequest = asyncHandeler(async (req, res, next) => {
   const data = req.body;
+  console.log("bot request received...", data);
   try {
     const response = await client.post(process.env.BOT_REPLY_MESSSAGE_URL, {
       chat_id: 1110216936,
-      text: `mirrow: ${data.message.text}`,
+      resize_keyboard: true,
+      text: "hello there...",
+      reply_markup: {
+        keyboard: [
+          [
+            {
+              text: "Yes",
+              callback_data: "btn_yes",
+            },
+            {
+              text: "No",
+              callback_data: "btn_no",
+            },
+          ],
+          [
+            {
+              text: "good",
+              callback_data: "btn_good",
+            },
+            {
+              text: "okay",
+              callback_data: "btn_okay",
+            },
+          ],
+        ],
+      },
     });
-    res.status(200).json(response.data);
   } catch (error) {
-    res.status(400).json({ success: false });
+    console.log("cannot procees bot request...", error);
   }
 });
 
