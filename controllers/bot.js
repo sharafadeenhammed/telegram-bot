@@ -1,64 +1,24 @@
 import asyncHandeler from "express-async-handler";
 import client from "../client/client.js";
+import auth from "./auth.js";
+import user from "./user.js";
 
 //@ route  POST api/v1/bot/incoming
 //@ Access Public
 //@ desc receive message payload from bot
 const botRequest = asyncHandeler(async (req, res, next) => {
   const data = req.body;
-  console.log("request body object: ", data);
-  try {
-    const response = await client.post(process.env.BOT_REPLY_MESSSAGE_URL, {
-      chat_id: data?.message?.from.id || data?.callback_query?.from.id,
-      resize_keyboard: true,
-      one_time_keyboard: true,
-      text: `mirrowing: ${data?.message?.text || data.callback_query.data} `,
-      reply_markup: {
-        inline_keyboard: [
-          [
-            {
-              text: "Yes",
-              callback_data: "btn_yes",
-            },
-            {
-              text: "No",
-              callback_data: "btn_no",
-            },
-          ],
-        ],
-      },
-    });
-  } catch (error) {
-    console.log("cannot procees bot request...", error);
-  }
-  res.status(200).json({ success: true });
-});
+  console.log("logging data from bot request: ", data);
+  const chatId = data?.message?.from.id || data?.callback_query?.from.id;
+  const message =
+    data?.message?.text ||
+    data?.callback_query?.data ||
+    data?.message?.reply_to_message.text;
+  if (message === "/start" || message === "start")
+    await auth.start(req, res, next);
+  if (message === "create account") await auth.createUser(req, res, next);
 
-const start = asyncHandeler(async (req, res, next) => {
-  try {
-    const response = await client.post(process.env.BOT_REPLY_MESSSAGE_URL, {
-      chat_id: data?.message?.from.id || data?.callback_query?.from.id,
-      resize_keyboard: true,
-      one_time_keyboard: true,
-      text: `mirrowing: ${data?.message?.text || data.callback_query.data} `,
-      reply_markup: {
-        inline_keyboard: [
-          [
-            {
-              text: "Yes",
-              callback_data: "btn_yes",
-            },
-            {
-              text: "No",
-              callback_data: "btn_no",
-            },
-          ],
-        ],
-      },
-    });
-  } catch (error) {
-    console.log("start error: ", error);
-  }
+  res.status(200).json({ success: true });
 });
 
 export default {

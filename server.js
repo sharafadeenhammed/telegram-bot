@@ -4,6 +4,7 @@ import dotenv, { config } from "dotenv";
 
 import connectDb from "./db/connectDb.js";
 import bot from "./routes/bot.js";
+import errorHandeler from "./utility/errorHandeler.js";
 
 dotenv.config();
 const server = express();
@@ -18,6 +19,8 @@ server.use((req, res, next) => {
 server.use(morgan("dev"));
 
 server.use("/api/v1/bot/", bot);
+
+server.use(errorHandeler);
 
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => {
