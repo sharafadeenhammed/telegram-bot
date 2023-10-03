@@ -6,14 +6,15 @@ import client from "../client/client.js";
 //@ desc receive message payload from bot
 const botRequest = asyncHandeler(async (req, res, next) => {
   const data = req.body;
-  console.log("bot request received...", data);
+  console.log("request body object: ", data);
   try {
     const response = await client.post(process.env.BOT_REPLY_MESSSAGE_URL, {
-      chat_id: 1110216936,
+      chat_id: data?.message?.from.id || data?.callback_query?.from.id,
       resize_keyboard: true,
-      text: "hello there...",
+      one_time_keyboard: true,
+      text: `mirrowing: ${data?.message?.text || data.callback_query.data} `,
       reply_markup: {
-        keyboard: [
+        inline_keyboard: [
           [
             {
               text: "Yes",
@@ -24,21 +25,39 @@ const botRequest = asyncHandeler(async (req, res, next) => {
               callback_data: "btn_no",
             },
           ],
+        ],
+      },
+    });
+  } catch (error) {
+    console.log("cannot procees bot request...", error);
+  }
+  res.status(200).json({ success: true });
+});
+
+const start = asyncHandeler(async (req, res, next) => {
+  try {
+    const response = await client.post(process.env.BOT_REPLY_MESSSAGE_URL, {
+      chat_id: data?.message?.from.id || data?.callback_query?.from.id,
+      resize_keyboard: true,
+      one_time_keyboard: true,
+      text: `mirrowing: ${data?.message?.text || data.callback_query.data} `,
+      reply_markup: {
+        inline_keyboard: [
           [
             {
-              text: "good",
-              callback_data: "btn_good",
+              text: "Yes",
+              callback_data: "btn_yes",
             },
             {
-              text: "okay",
-              callback_data: "btn_okay",
+              text: "No",
+              callback_data: "btn_no",
             },
           ],
         ],
       },
     });
   } catch (error) {
-    console.log("cannot procees bot request...", error);
+    console.log("start error: ", error);
   }
 });
 
