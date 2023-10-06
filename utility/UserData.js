@@ -12,6 +12,7 @@ class UserData {
       data?.message?.from?.last_name || data.callback_query?.from?.last_name;
     this.userName =
       data?.message?.from?.username || data.callback_query?.from?.username;
+    this.phone = data?.message?.contact?.phone_number || null;
   }
 }
 

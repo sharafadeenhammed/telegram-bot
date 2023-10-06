@@ -1,30 +1,35 @@
 import asyncHandeler from "express-async-handler";
 import auth from "./auth.js";
 import user from "./user.js";
+import UserData from "../utility/UserData.js";
 
 //@ route  POST api/v1/bot/incoming
 //@ Access Public
 //@ desc receive message payload from bot
 const botRequest = asyncHandeler(async (req, res, next) => {
-  const data = req.body;
+  const userData = new UserData(req);
 
   // initilizing conversation with user...
-  if (message === "/start" || message === "start")
+  if (userData.message === "/start" || userData.message === "start")
     await auth.start(req, res, next);
 
   // create user account...
-  if (message === "create account") await auth.createUser(req, res, next);
+  if (userData.message === "create account")
+    await auth.createUser(req, res, next);
 
   // display list of available user info...
-  if (message === "buy info" || message == "/buyinfo")
+  if (userData.message === "buy info" || userData.message == "/buyinfo")
     await auth.createUser(req, res, next);
 
   // check user wallet balance...
-  if (message === "check balance" || message == "/checkbalance")
+  if (
+    userData.message === "check balance" ||
+    userData.message == "/checkbalance"
+  )
     await user.getUserBalance(req, res, next);
 
   // fund user wallet...
-  if (message === "fund wallet" || message == "/fundwallet")
+  if (userData.message === "fund wallet" || userData.message == "/fundwallet")
     await auth.createUser(req, res, next);
 
   res.status(200).json({ success: true });
