@@ -1,22 +1,23 @@
 import User from "../model/User.js";
 import botReply from "../client/botReply.js";
+import UserData from "../utility/UserData.js";
 import user from "./user.js";
 
 const start = async (req, res, next) => {
   const data = req.body;
+  const userData = new UserData(req);
+  console.log(userData);
   const chatId = data?.message?.from.id || data?.callback_query?.from.id;
   const message =
     data?.message?.text ||
-    data.callback_query.data ||
-    data?.message?.from?.reply_to_message.text;
+    data?.callback_query?.data ||
+    data?.message?.reply_to_message.text;
   const firstName =
     data?.message?.from?.first_name || data.callback_query?.from?.first_name;
   const lastName =
     data?.message?.from?.last_name || data.callback_query?.from?.last_name;
   const userName =
     data?.message?.from?.username || data.callback_query?.from?.username;
-
-  console.log("text message: ", message);
 
   // check if user exists in database.
   const user = await User.findOne({ chatId });
@@ -59,16 +60,16 @@ const start = async (req, res, next) => {
       keyboard: [
         [
           {
-            text: "fund wallet",
-            callback_data: "fund wallet",
+            text: "check balance ",
+            callback_data: "check balance",
           },
           {
             text: "buy info",
             callback_data: "buy info",
           },
           {
-            text: "check wallet balance",
-            callback_data: "check balance",
+            text: "fund wallet",
+            callback_data: "fund wallet",
           },
         ],
       ],
@@ -78,10 +79,13 @@ const start = async (req, res, next) => {
 
 const createUser = async (req, res, next) => {
   const data = req.body;
-  console.log(" data from create user: ", data);
   const chatId = data?.message?.from.id || data?.callback_query?.from.id;
   const userName =
     data?.message?.from?.username || data.callback_query?.from?.username;
+  const message =
+    data?.message?.text ||
+    data?.callback_query?.data ||
+    data?.message?.reply_to_message?.text;
 
   // add user to database
   await user.createUser(req, res, next);
@@ -94,7 +98,7 @@ const createUser = async (req, res, next) => {
       keyboard: [
         [
           {
-            text: "check balance",
+            text: "check balance ",
             callback_data: "check balance",
           },
           {
