@@ -43,38 +43,6 @@ const getUserBalance = async (req, res, next) => {
       style: "currency",
       currency: "USD",
     })}`,
-    reply_markup: {
-      keyboard: [
-        [
-          {
-            text: "check balance ",
-            callback_data: "check balance",
-          },
-          {
-            text: "buy info",
-            callback_data: "buy info",
-          },
-          {
-            text: "fund wallet",
-            callback_data: "fund wallet",
-          },
-        ],
-        [
-          {
-            text: "check purchased documents",
-            callback_data: "my documents",
-          },
-          {
-            text: "about us ?",
-            callback_data: "about us",
-          },
-          {
-            text: "help",
-            callback_data: "help",
-          },
-        ],
-      ],
-    },
   });
 };
 

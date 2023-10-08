@@ -32,6 +32,12 @@ const botRequest = asyncHandeler(async (req, res, next) => {
   if (userData.message === "fund wallet" || userData.message == "/fundwallet")
     await auth.createUser(req, res, next);
 
+  if (userData.message === "show" || userData.message === "/show")
+    await auth.showKeyboard(req, res, next);
+
+  if (userData.message === "🔴hide keyboard" || userData.message === "/hide")
+    await auth.hideKeyboard(req, res, next);
+
   res.status(200).json({ success: true });
 });
 
