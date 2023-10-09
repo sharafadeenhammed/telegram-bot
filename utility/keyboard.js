@@ -17,11 +17,11 @@ export default {
       ],
       [
         {
-          text: "check purchased documents",
+          text: "my documents",
           callback_data: "my documents",
         },
         {
-          text: "about us ?",
+          text: "about bot ?",
           callback_data: "about us",
         },
         {

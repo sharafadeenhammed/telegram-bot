@@ -6,6 +6,10 @@ const UserSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    userName: {
+      type: String,
+      required: true,
+    },
     lastName: {
       type: String,
       required: true,
@@ -21,6 +25,7 @@ const UserSchema = mongoose.Schema(
     },
     downloadsUrl: {
       type: Array,
+      default: [],
     },
     documentsPaidFor: {
       type: Array,

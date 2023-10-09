@@ -21,10 +21,8 @@ server.use(morgan("dev"));
 
 server.use("/api/v1/bot/", bot);
 
-server.get("/download/:fileName", (req, res, next) => {
+server.get("/download/:id/:fileName", (req, res, next) => {
   const fileName = path.join("./", "documents", req.params.fileName + ".zip");
-  console.log(fileName);
-  console.log("params: ", req.params);
   res.download(fileName); // Set disposition and send it.
 });
 

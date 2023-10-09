@@ -14,6 +14,9 @@ const Document = mongoose.Schema(
       type: String,
       default: "",
     },
+    userChatId: {
+      type: Number,
+    },
   },
   {
     timestamps: true,

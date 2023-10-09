@@ -1,6 +1,7 @@
 import asyncHandeler from "express-async-handler";
 import auth from "./auth.js";
 import user from "./user.js";
+import document from "./document.js";
 import UserData from "../utility/UserData.js";
 
 //@ route  POST api/v1/bot/incoming
@@ -30,13 +31,18 @@ const botRequest = asyncHandeler(async (req, res, next) => {
 
   // fund user wallet...
   if (userData.message === "fund wallet" || userData.message == "/fundwallet")
-    await auth.createUser(req, res, next);
-
+    user.fundWallet(req, res, next, 10);
   if (userData.message === "show" || userData.message === "/show")
     await auth.showKeyboard(req, res, next);
 
   if (userData.message === "🔴hide keyboard" || userData.message === "/hide")
     await auth.hideKeyboard(req, res, next);
+
+  if (
+    userData.message === "my documents" ||
+    userData.message === "/mydocuments"
+  )
+    await document.findUserDocuments(userData.chatId);
 
   res.status(200).json({ success: true });
 });

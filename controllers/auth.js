@@ -13,7 +13,7 @@ const start = async (req, res, next) => {
     // prompt user to create an account.
     await botReply.botResponse({
       chat_id: userData.chatId,
-      text: `hello ${userName} you are yet to have an account with us \n\nAbout Us: we sell user info here\n\nGet Started: get started by creating your account profile with us.`,
+      text: `hello ${userData.userName} you are yet to have an account with us \n\nAbout Us: we sell user info here\n\nGet Started: get started by creating your account profile with us.`,
     });
 
     await botReply.botResponse({
