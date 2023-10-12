@@ -2,6 +2,7 @@ import express from "express";
 import morgan from "morgan";
 import dotenv from "dotenv";
 import path from "path";
+import fileUpload from "express-fileupload";
 
 import connectDb from "./db/connectDb.js";
 import bot from "./routes/bot.js";
@@ -13,6 +14,7 @@ connectDb(); // connect to database...
 
 server.use(express.json());
 server.use(express.urlencoded({ extended: false }));
+server.use(fileUpload());
 server.use((req, res, next) => {
   // console.log("resquest data: ", req.body);
   next();
