@@ -67,9 +67,19 @@ const hideKeyboard = async (req, res, next) => {
   });
 };
 
+const invalidCommand = async (req, res, next) => {
+  const userData = new UserData(req);
+  await botReply.botResponse({
+    chat_id: userData.chatId,
+    text: "invalid command",
+    reply_markup: keyboard.mainKeyboard,
+  });
+};
+
 export default {
   start,
   createUser,
   showKeyboard,
   hideKeyboard,
+  invalidCommand,
 };

@@ -1,3 +1,6 @@
+import express from "express";
+
+import botCommands from "../utility/botCommands.js";
 import asyncHandeler from "express-async-handler";
 import auth from "./auth.js";
 import user from "./user.js";
@@ -32,17 +35,24 @@ const botRequest = asyncHandeler(async (req, res, next) => {
   // fund user wallet...
   if (userData.message === "fund wallet" || userData.message == "/fundwallet")
     user.fundWallet(req, res, next, 10);
+
+  // show keyboard
   if (userData.message === "show" || userData.message === "/show")
     await auth.showKeyboard(req, res, next);
 
+  // hide keyboard
   if (userData.message === "🔴hide keyboard" || userData.message === "/hide")
     await auth.hideKeyboard(req, res, next);
 
+  // find user documents
   if (
     userData.message === "my documents" ||
     userData.message === "/mydocuments"
   )
     await document.findUserDocuments(userData.chatId);
+
+  if (!botCommands.includes(userData.message))
+    await auth.invalidCommand(req, res, next);
 
   res.status(200).json({ success: true });
 });
