@@ -21,7 +21,7 @@ const fundWallet = async (req, res, next, amount) => {
   if (!user) return await botReply.noAccountResponse(userData.chatId);
   user.balance = user.balance + amount;
   await user.save();
-  botReply.botResponse({
+  await botReply.botResponse({
     chat_id: userData.chatId,
     text: `[testing purpose] your wallet has been sucessfully funded with ${currencyFormater(
       amount
@@ -43,7 +43,7 @@ const getUserBalance = async (req, res, next) => {
   const userData = new UserData(req);
   const user = await User.findOne({ chatId: userData.chatId });
   if (!user) return await botReply.noAccountResponse(userData.chatId);
-  botReply.botResponse({
+  await botReply.botResponse({
     chat_id: userData.chatId,
     resize_keyboard: true,
     one_time_keyboard: true,
