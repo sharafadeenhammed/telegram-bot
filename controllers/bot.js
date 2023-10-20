@@ -22,8 +22,13 @@ const botRequest = asyncHandeler(async (req, res, next) => {
     await auth.createUser(req, res, next);
 
   // display list of available user info...
-  if (userData.message === "buy info" || userData.message == "/buyinfo")
-    await document.yetToBeImplemented(req, res, next, "");
+  if (userData.message === "buy document" || userData.message == "/buyinfo")
+    await document.yetToBeImplemented(
+      req,
+      res,
+      next,
+      "sorry, this command is yet to be implemented it will be available soon"
+    );
 
   // check user wallet balance...
   if (
@@ -49,7 +54,12 @@ const botRequest = asyncHandeler(async (req, res, next) => {
     userData.message === "my documents" ||
     userData.message === "/mydocuments"
   )
-    await document.yetToBeImplemented(req, res, next, "");
+    await document.yetToBeImplemented(
+      req,
+      res,
+      next,
+      "sorry, this command is yet to be implemented it will be available soon"
+    );
 
   if (!botCommands.includes(userData.message))
     await auth.invalidCommand(req, res, next);

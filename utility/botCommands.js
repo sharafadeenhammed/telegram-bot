@@ -1,7 +1,7 @@
 export default [
   "/start",
   "start",
-  "buy info",
+  "buy document",
   "/buyinfo",
   "check balance",
   "/checkbalance",

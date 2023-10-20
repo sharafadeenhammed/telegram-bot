@@ -13,7 +13,7 @@ const noAccountResponse = async (chat_id) => {
 const invalidCommand = async (chat_id, message) => {
   return await client.post(process.env.BOT_REPLY_MESSSAGE_URL, {
     chat_id,
-    text: "messgae",
+    text: message || "invalid command",
   });
 };
 

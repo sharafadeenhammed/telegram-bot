@@ -1,5 +1,6 @@
 import Document from "../model/Document.js";
 import UserData from "../utility/UserData.js";
+import botReply from "../client/botReply.js";
 
 const findUserDocuments = async (userId) => {
   const documents = await Document.find({ userChatId });
@@ -7,11 +8,9 @@ const findUserDocuments = async (userId) => {
   return documents;
 };
 
-const yetToBeImplemented = async (req, res, next, msg = "") => {
+const yetToBeImplemented = async (req, res, next, msg) => {
   const user = new UserData(req);
-  text =
-    msg ||
-    "sorry, this command is yet to be implemented it will be available soon";
+  const text = msg || "invalid command";
   await botReply.invalidCommand(user.chatId, text);
 };
 

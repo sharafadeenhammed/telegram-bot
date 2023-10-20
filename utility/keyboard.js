@@ -4,29 +4,23 @@ export default {
       [
         {
           text: "check balance ",
-          callback_data: "check balance",
         },
         {
           text: "fund wallet",
-          callback_data: "fund wallet",
         },
         {
-          text: "buy new document",
-          callback_data: "buy info",
+          text: "buy document",
         },
       ],
       [
         {
           text: "my documents",
-          callback_data: "my documents",
         },
         {
           text: "about bot ?",
-          callback_data: "about us",
         },
         {
           text: "🔴hide keyboard",
-          callback_data: "hide",
         },
       ],
     ],
