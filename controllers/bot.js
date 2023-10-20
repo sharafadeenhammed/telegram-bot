@@ -13,6 +13,9 @@ import UserData from "../utility/UserData.js";
 const botRequest = asyncHandeler(async (req, res, next) => {
   const userData = new UserData(req);
 
+  if (!botCommands.includes(userData.message))
+    return await auth.invalidCommand(req, res, next);
+
   // initilizing conversation with user...
   if (userData.message === "/start" || userData.message === "start")
     await auth.start(req, res, next);
@@ -50,9 +53,6 @@ const botRequest = asyncHandeler(async (req, res, next) => {
     userData.message === "/mydocuments"
   )
     await document.findUserDocuments(userData.chatId);
-
-  if (!botCommands.includes(userData.message))
-    await auth.invalidCommand(req, res, next);
 
   res.status(200).json({ success: true });
 });

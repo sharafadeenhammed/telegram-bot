@@ -71,7 +71,7 @@ const invalidCommand = async (req, res, next) => {
   const userData = new UserData(req);
   await botReply.botResponse({
     chat_id: userData.chatId,
-    text: "invalid command",
+    text: "invalid command or command yet to be implemented",
     reply_markup: keyboard.mainKeyboard,
   });
 };

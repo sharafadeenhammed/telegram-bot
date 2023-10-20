@@ -1,8 +1,8 @@
 export default [
   "/start",
   "start",
-  "buy info",
-  "/buyinfo",
+  // "buy info",
+  // "/buyinfo",
   "check balance",
   "/checkbalance",
   "fund wallet",
@@ -11,6 +11,6 @@ export default [
   "/show",
   "🔴hide keyboard",
   "/hide",
-  "my documents",
-  "/mydocuments",
+  // "my documents",
+  // "/mydocuments",
 ];
