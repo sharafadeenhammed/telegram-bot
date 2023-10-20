@@ -13,9 +13,6 @@ import UserData from "../utility/UserData.js";
 const botRequest = asyncHandeler(async (req, res, next) => {
   const userData = new UserData(req);
 
-  if (!botCommands.includes(userData.message))
-    return await auth.invalidCommand(req, res, next);
-
   // initilizing conversation with user...
   if (userData.message === "/start" || userData.message === "start")
     await auth.start(req, res, next);
@@ -26,7 +23,7 @@ const botRequest = asyncHandeler(async (req, res, next) => {
 
   // display list of available user info...
   if (userData.message === "buy info" || userData.message == "/buyinfo")
-    await auth.createUser(req, res, next);
+    await document.yetToBeImplemented(req, res, next, "");
 
   // check user wallet balance...
   if (
@@ -52,7 +49,10 @@ const botRequest = asyncHandeler(async (req, res, next) => {
     userData.message === "my documents" ||
     userData.message === "/mydocuments"
   )
-    await document.findUserDocuments(userData.chatId);
+    await document.yetToBeImplemented(req, res, next, "");
+
+  if (!botCommands.includes(userData.message))
+    await auth.invalidCommand(req, res, next);
 
   res.status(200).json({ success: true });
 });
