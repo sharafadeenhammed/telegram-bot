@@ -34,7 +34,7 @@ const botRequest = asyncHandeler(async (req, res, next) => {
 
   // fund user wallet...
   if (userData.message === "fund wallet" || userData.message == "/fundwallet")
-    user.fundWallet(req, res, next, 10);
+    await user.fundWallet(req, res, next, 10);
 
   // show keyboard
   if (userData.message === "show" || userData.message === "/show")
