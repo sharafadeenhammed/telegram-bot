@@ -19,9 +19,13 @@ server.use((req, res, next) => {
   // console.log("resquest data: ", req.body);
   next();
 });
-server.use(morgan("dev"));
+server.use(morgan(process.env.MODE === "development" ? "dev" : "common"));
 
 server.use("/api/v1/bot/", bot);
+
+server.get("/status", (req, res, next) => {
+  res.status(200).json({ success: true });
+})
 
 server.get("/download/:id/:fileName", (req, res, next) => {
   const fileName = path.join("./", "documents", req.params.fileName + ".zip");
