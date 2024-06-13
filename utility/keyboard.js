@@ -8,17 +8,18 @@ export default {
         {
           text: "fund wallet",
         },
+      ],
+      [
         {
-          text: "buy document",
+          text: "about bot ?",
         },
       ],
       [
         {
-          text: "my documents",
+          text: "get number for otp code",
         },
-        {
-          text: "about bot ?",
-        },
+      ],
+      [
         {
           text: "🔴hide keyboard",
         },
