@@ -22,7 +22,7 @@ const fundWallet = async (req, res, next, amount) => {
   if (!user) return await botReply.noAccountResponse(userData.chatId);
   await botReply.botResponse({
     chat_id: userData.chatId,
-    text: `Fund your wallet by send USDT TRC-20 to the address shown below \n\n  ${user.coinPaymentAddress}`,
+    text: `Fund your wallet by sending USDT TRC-20 to the address shown below \n\n  ${user.coinPaymentAddress}`,
   });
 };
 
