@@ -22,7 +22,7 @@ const fundWallet = async (req, res, next, amount) => {
   if (!user) return await botReply.noAccountResponse(userData.chatId);
   await botReply.botResponse({
     chat_id: userData.chatId,
-    text: `send USDT to this address ${user.coinPaymentAddress}`,
+    text: `Fund your wallet by send USDT TRC-20 to the address shown below \n\n  ${user.coinPaymentAddress}`,
   });
 };
 
@@ -49,10 +49,7 @@ const getUserBalance = async (req, res, next) => {
 };
 
 const currencyFormater = (amount) => {
-  return amount.toLocaleString("en-US", {
-    style: "currency",
-    currency: "USD",
-  });
+  return `USDT ${parseFloat(amount).toFixed(2)}`
 };
 
 export default {
