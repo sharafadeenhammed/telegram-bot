@@ -13,4 +13,5 @@ export default [
   "/hide",
   "my documents",
   "/mydocuments",
+  "create account"
 ];
