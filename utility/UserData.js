@@ -5,7 +5,8 @@ class UserData {
     this.message =
       data?.message?.text ||
       data?.callback_query?.data ||
-      data?.message?.reply_to_message.text;
+      data?.message?.reply_to_message?.text ||
+      "no message"
     this.firstName =
       data?.message?.from?.first_name || data.callback_query?.from?.first_name;
     this.lastName =
