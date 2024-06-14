@@ -3,6 +3,7 @@ import botReply from "../client/botReply.js";
 import UserData from "../utility/UserData.js";
 import user from "./user.js";
 import keyboard from "../utility/keyboard.js";
+import { getAddress } from "../utility/coinpPayments.js"
 
 const start = async (req, res, next) => {
   const userData = new UserData(req);
@@ -36,7 +37,8 @@ const start = async (req, res, next) => {
 
 const createUser = async (req, res, next) => {
   const userData = new UserData(req);
-
+  const address = await getAddress("USDT", userData.chatId);
+  req.address = address
   // add user to database
   await user.createUser(req, res, next);
   await botReply.botResponse({

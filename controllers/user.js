@@ -11,6 +11,7 @@ const createUser = async (req, res, next) => {
     lastName: userData.lastName,
     userName: userData.userName,
     phone: userData.phone,
+    coinPaymentAddress: req.address.address
   });
   return user;
 };
@@ -19,13 +20,9 @@ const fundWallet = async (req, res, next, amount) => {
   const userData = new UserData(req);
   const user = await User.findOne({ chatId: userData.chatId });
   if (!user) return await botReply.noAccountResponse(userData.chatId);
-  user.balance = user.balance + amount;
-  await user.save();
   await botReply.botResponse({
     chat_id: userData.chatId,
-    text: `[testing purpose] your wallet has been sucessfully funded with ${currencyFormater(
-      amount
-    )} your current balance is ${currencyFormater(user.balance)}`,
+    text: `send USDT to this address ${user.coinPaymentAddress}`,
   });
 };
 

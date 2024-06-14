@@ -38,6 +38,10 @@ const UserSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    coinPaymentAddress: {
+      type: String,
+      require: true,
+    }
   },
   { timestamps: true }
 );
