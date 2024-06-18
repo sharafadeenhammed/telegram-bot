@@ -27,10 +27,6 @@ const UserSchema = mongoose.Schema(
       type: Array,
       default: [],
     },
-    documentsPaidFor: {
-      type: Array,
-      default: [],
-    },
     token: {
       type: String,
     },
@@ -41,7 +37,15 @@ const UserSchema = mongoose.Schema(
     coinPaymentAddress: {
       type: String,
       require: true,
-    }
+    },
+    service: {
+      type: String,
+      default:""
+    },
+    country: {
+      type: String,
+      default:""
+    },
   },
   { timestamps: true }
 );
