@@ -1,215 +1,215 @@
 export default Object.freeze([
   {
-    countryCode:"US",
+    countryCode: "US",
     country:"United States 🇺🇸 "	
   }, {
     countryCode: "CA",
-    country:"Canada"
+    country:"Canada 🇨🇦"
   }, {
     countryCode: "UK",
-    country:"Unt. Kingdom"
+    country:"Unt. Kingdom 🇬🇧"
   }, {
     countryCode: "FR",
-    country:"France"
+    country:"France 🇫🇷"
   }, {
     countryCode: "DE",
-    country:"Germany"
+    country:"Germany 🇩🇪"
   }, {
     countryCode: "IT",
-    country:"Italy"
+    country:"Italy 🇮🇹"
   }, {
     countryCode: "ES",
-   country:"Spain" 
+   country:"Spain 🇪🇸" 
   }, {
     countryCode: "AL",
-    country:"Albania"
+    country:"Albania 🇦🇱"
   }, {
     countryCode: "AR",
     country:"Argentina"
   }, {
     countryCode: "AU",
-    country:"Australia"
+    country:"Australia 🇦🇺"
   }, {
     countryCode:"AT",
-    country:"Austria"
+    country:"Austria 🇦🇹"
   }, {
     countryCode: "BD",
-    country:"Bangladesh"
+    country:"Bangladesh 🇧🇩"
   }, {
     countryCode: "BA",
-    country:"Bos. and Herz."
+    country:"Bos. and Herz. 🇧🇦"
   }, {
     countryCode: "BR",
-    country:"Brazil"
+    country:"Brazil 🇧🇷"
   }, {
     countryCode: "BG",
-    country:"Bulgaria"
+    country:"Bulgaria 🇧🇬"
   }, {
     countryCode: "KH",
-    country:"Cambodia"
+    country:"Cambodia 🇰🇭"
   }, {
     countryCode: "CL",
-    country:"Chile"
+    country:"Chile 🇨🇱"
   }, {
     countryCode: "CO",
-    country:"Colombia"
+    country:"Colombia 🇨🇴"
   }, {
     countryCode: "HR",
-    country:"Croatia"
+    country:"Croatia 🇭🇷"
   }, {
     countryCode: "CY",
-    country:"Cyprus"
+    country:"Cyprus 🇨🇾"
   }, {
     countryCode: "CZ",
-    country:"Czech Republic"
+    country:"Czech Republic 🇨🇿"
   }, {
     countryCode: "DK",
-    country:"Denmark"
+    country:"Denmark 🇩🇰"
   }, {
     countryCode: "DO",
-    country:"Dominican"
+    country:"Dominican 🇩🇴"
   }, {
     countryCode: "EG",
-    country:"Egypy",
+    country:"Egypy 🇪🇬",
   }, {
     countryCode: "EE",
-    country:"Estonia"
+    country:"Estonia 🇪🇪"
   }, {
     countryCode: "FI",
-    country:"Finland"
+    country:"Finland 🇫🇮"
   }, {
     countryCode: "GE",
-    country:"Georgia"
+    country:"Georgia 🇬🇪"
   }, {
     countryCode: "GH",
-    country:"Ghana (Virtual)"
+    country:"Ghana (Virtual) 🇬🇭"
   }, {
     countryCode:"GI",
-    country:"Gibraltar",
+    country:"Gibraltar 🇬🇮",
   }, {
     countryCode: "GR",
-    country:"Greece"
+    country:"Greece 🇬🇷"
   }, {
     countryCode: "HK",
-    country:"Hong Kong"
+    country:"Hong Kong 🇭🇰"
     
   }, {
     countryCode: "HU",
-    country:"Hungary"
+    country:"Hungary 🇭🇺"
   }, {
     countryCode: "IN",
-    country:"India"
+    country:"India 🇮🇳"
   }, {
     countryCode: "JP",
-    country:"Japan"
+    country:"Japan 🇯🇵"
   }, {
     countryCode: "KG",
-    country:"Kyrgyzstan (Virtual)"
+    country:"Kyrgyzstan (Virtual) 🇰🇬"
   }, {
     countryCode: "NO",
-    country:"Norway"
+    country:"Norway 🇳🇴"
   }, {
     countryCode: "PK",
-    country:"Pakistan (Virtual)"
+    country:"Pakistan (Virtual) 🇵🇰"
   }, {
     countryCode: "SG",
-    country:"Singapore"
+    country:"Singapore 🇸🇬"
   }, {
     countryCode: "TZ",
-    country:"Tanzania"
+    country:"Tanzania 🇹🇿"
   }, {
     countryCode: "UZ",
-    country:"Uzbekistan (Virtual)"
+    country:"Uzbekistan (Virtual) 🇺🇿"
   }, {
     countryCode: "ID",
-    country:"Indonesia"
+    country:"Indonesia 🇮🇩"
   }, {
     countryCode: "IE",
-    country:"Ireland"
+    country:"Ireland 🇮🇪"
   }, {
     countryCode: "IL",
-    country:"Isreal"
+    country:"Isreal 🇮🇱"
   }, {
     countryCode:"KZ",
-    country:"Kazakhstan"
+    country:"Kazakhstan 🇰🇿"
   }, {
     countryCode: "KE",
-    country:"Kenya"
+    country:"Kenya 🇰🇪"
   }, {
     countryCode:"LA",
-    country:"Laos"
+    country:"Laos 🇱🇦"
   }, {
     countryCode: "LV",
-    country:"Latvia" 
+    country:"Latvia 🇱🇻" 
   }, {
     countryCode: "LT",
-    country:"Lithuania"
+    country:"Lithuania 🇱🇹"
   }, {
     countryCode: "MK",
-    country:"Macedonia"
+    country:"Macedonia 🇲🇰"
   },{
     countryCode: "MY",
-    country:"Malaysia"
+    country:"Malaysia 🇲🇾"
   }, {
     countryCode: "MX",
-    country:"Mexico"
+    country:"Mexico 🇲🇽"
   }, {
     countryCode: "MA",
-    country:"Morocco"
+    country:"Morocco 🇲🇦"
   }, {
     countryCode: "NL",
-    country:"Netherlands"
+    country:"Netherlands 🇳🇱"
   }, {
     countryCode: "NZ",
-    country:"New Zealand"
+    country:"New Zealand 🇳🇿"
   }, {
     countryCode: "NG",
-    country:"Nigeria"
+    country:"Nigeria 🇳🇬"
   }, {
     countryCode: "PY",
-    country:"Paraguay"
+    country:"Paraguay 🇵🇾"
   }, {
     countryCode: "PH",
-    country:"Philippines"
+    country:"Philippines 🇵🇭"
   }, {
     countryCode: "PL",
-    country:"Poland"
+    country:"Poland 🇵🇱"
   }, {
     countryCode: "PT",
-    country:"Portugal"
+    country:"Portugal 🇵🇹"
   }, {
     countryCode: "RO",
-    country:"Romania"
+    country:"Romania 🇷🇴"
   }, {
     countryCode: "RU",
-    country:"Russian Federation"
+    country:"Russian Federation 🇷🇺"
   }, {
     countryCode: "RS",
-    country:"Serbia"
+    country:"Serbia 🇷🇸"
   }, {
     countryCode: "SK",
-    country: "Slovakia",
+    country: "Slovakia 🇸🇰",
   }, {
     countryCode: "SI",
-    country:"Slovenia"
+    country:"Slovenia 🇸🇮"
   }, {
     countryCode: "ZA",
-    country:"South Africa"
+    country:"South Africa 🇿🇦"
   }, {
     countryCode: "SE",
-    country:"Sweden"
+    country:"Sweden 🇸🇪"
   }, {
     countryCode: "TH",
-    country:"Thailand"
+    country:"Thailand 🇹🇭"
   }, {
     countryCode: "TR",
-    country:"Turkey"
+    country:"Turkey 🇹🇷"
   }, {
     countryCode: "UA",
-    country:"Ukraine"
+    country:"Ukraine 🇺🇦"
   }, {
     countryCode: "VN",
-    country:"Vietnam"
+    country:"Vietnam 🇻🇳"
   }
 ])
 
