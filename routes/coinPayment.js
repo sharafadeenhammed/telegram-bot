@@ -1,6 +1,5 @@
 import express from "express"
-// import {} from "../controllers/coinPayment.js";
-
+import {verifyPayment} from "../controllers/coinPayment"
 
 const route = express.Router();
 
