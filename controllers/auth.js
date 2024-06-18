@@ -24,6 +24,7 @@ const start = async (req, res, next) => {
       text: "create account",
       reply_markup: keyboard.createProfileKeyboard,
     });
+    res.status(200).json({ success: true });
     return;
   }
   // prompt user to buy, sell, or fund wallet
@@ -33,6 +34,7 @@ const start = async (req, res, next) => {
     text: `welcome ${userData.userName}`,
     reply_markup: keyboard.mainKeyboard,
   });
+  res.status(200).json({ success: true });
 };
 
 const createUser = async (req, res, next) => {
@@ -48,6 +50,7 @@ const createUser = async (req, res, next) => {
     text: `welcome ${userData.userName} we are happy to have you 🎉🎊`,
     reply_markup: keyboard.mainKeyboard,
   });
+  res.status(200).json({ success: true });
 };
 
 const showKeyboard = async (req, res, next) => {
@@ -58,6 +61,7 @@ const showKeyboard = async (req, res, next) => {
     text: `🟢 keyboard opened 🟢`,
     reply_markup: keyboard.mainKeyboard,
   });
+  res.status(200).json({ success: true });
 };
 
 const hideKeyboard = async (req, res, next) => {
@@ -67,6 +71,7 @@ const hideKeyboard = async (req, res, next) => {
     text: "🔴 keyboard closed /show keyboard 🔴",
     reply_markup: keyboard.hideKeyboard,
   });
+  res.status(200).json({ success: true });
 };
 
 const invalidCommand = async (req, res, next) => {
@@ -76,6 +81,17 @@ const invalidCommand = async (req, res, next) => {
     text: "invalid command or command yet to be implemented",
     reply_markup: keyboard.mainKeyboard,
   });
+  res.status(200).json({ success: true });
+};
+
+const aboutBot = async (req, res, next) => {
+  const userData = new UserData(req);
+  await botReply.botResponse({
+    chat_id: userData.chatId,
+    text: "Our Text Message Bot streamlines otp code generation by automatically generating and forwarding YOUR OTP CODE to you. \nKey features include \n 1. seamless otp code \n 2. advanced filtering \n3. automatic number generation. \nStart using our bot today to simplify and improve your otp code receiving workflow.",
+    reply_markup: keyboard.mainKeyboard,
+  });
+  res.status(200).json({ success: true });
 };
 
 export default {
@@ -84,4 +100,5 @@ export default {
   showKeyboard,
   hideKeyboard,
   invalidCommand,
+  aboutBot
 };

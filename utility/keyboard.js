@@ -11,12 +11,28 @@ export default {
       ],
       [
         {
-          text: "about bot ?",
+          text: "check countries available",
+        },
+        {
+          text: "check services available",
         },
       ],
       [
         {
-          text: "get number for otp code",
+          text: "select country",
+        },
+        {
+          text: "select service",
+        },
+      ],
+      [
+        {
+          text: "use a number",
+        },
+      ],
+      [
+        {
+          text: "about bot ?",
         },
       ],
       [
@@ -28,6 +44,18 @@ export default {
   },
   hideKeyboard: {
     hide_keyboard: true,
+  },
+  useNumber: {
+    keyboard: [
+      [
+        {
+          text: "use this number",
+        },
+        {
+          text: "don't use this number",
+        },
+      ]
+    ],
   },
   createProfileKeyboard: {
     keyboard: [

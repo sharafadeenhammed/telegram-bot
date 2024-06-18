@@ -6,6 +6,7 @@ import auth from "./auth.js";
 import user from "./user.js";
 import document from "./document.js";
 import UserData from "../utility/UserData.js";
+import * as serviceList from "../controllers/serviceList.js";
 
 //@ route  POST api/v1/bot/incoming
 //@ Access Public
@@ -49,17 +50,23 @@ const botRequest = asyncHandeler(async (req, res, next) => {
   if (userData.message === "🔴hide keyboard" || userData.message === "/hide")
     await auth.hideKeyboard(req, res, next);
 
-  // find user documents
-  if (
-    userData.message === "my documents" ||
-    userData.message === "/mydocuments"
-  )
-    await document.yetToBeImplemented(
-      req,
-      res,
-      next,
-      "sorry, this command is yet to be implemented it will be available soon"
-    );
+  if (userData.message === "about bot ?") await auth.aboutBot(req, res, next);
+
+  if (userData.message === "use a number") await document.yetToBeImplemented(req, res, next, "sorry, this command is yet to be implemented it will be available soon");
+  
+  if (userData.message === "check countries available") await serviceList.listCountryAvailable(req, res, next);
+  
+  if (userData.message === "check services available") await serviceList.listServiceAvailable(req, res, next);
+  
+  if(userData.message === "select country") await serviceList.countrySelect(req, res, next);
+  
+  if (userData.message === "select service") await serviceList.serviceSelect(req, res, next);
+  
+  if(userData.message === "use a number") await document.yetToBeImplemented(req, res, next, "sorry, this command is yet to be implemented it will be available soon");
+
+  if(userData.message === "don't use number") await document.yetToBeImplemented(req, res, next, "sorry, this command is yet to be implemented it will be available soon");
+  
+  if(userData.message === "use this number") await document.yetToBeImplemented(req, res, next, "sorry, this command is yet to be implemented it will be available soon");
 
   if (!botCommands.includes(userData.message)) await auth.invalidCommand(req, res, next);
   res.status(200).json({ success: true });

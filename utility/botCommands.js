@@ -13,5 +13,15 @@ export default [
   "/hide",
   "my documents",
   "/mydocuments",
-  "create account"
+  "create account",
+  "/about bot ?",
+  "get number for otp code",
+  "/getotp",
+  "check countries available",
+  "check services available",
+  "select country",
+  "select service",
+  "use a number",
+  "use this number",
+  "don't use number"
 ];
