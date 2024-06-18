@@ -23,5 +23,6 @@ export default [
   "select service",
   "use a number",
   "use this number",
-  "don't use number"
+  "don't use number",
+  "about bot ?",
 ];

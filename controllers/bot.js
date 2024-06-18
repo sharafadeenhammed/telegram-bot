@@ -62,8 +62,6 @@ const botRequest = asyncHandeler(async (req, res, next) => {
   if(userData.message === "select country") await serviceList.countrySelect(req, res, next);
   
   if (userData.message === "select service") await serviceList.serviceSelect(req, res, next);
-  
-  if(userData.message === "use a number") await document.yetToBeImplemented(req, res, next, "sorry, this command is yet to be implemented it will be available soon");
 
   if(userData.message === "don't use number") await document.yetToBeImplemented(req, res, next, "sorry, this command is yet to be implemented it will be available soon");
   
