@@ -1,7 +1,7 @@
 export default Object.freeze([
   {
     countryCode:"US",
-    country:"United States"	
+    country:"United States 🇺🇸 "	
   }, {
     countryCode: "CA",
     country:"Canada"
