@@ -46,6 +46,14 @@ const UserSchema = mongoose.Schema(
       type: String,
       default:""
     },
+    servicePhone: {
+      type: String,
+      default:""
+    },
+    receivedSms: {
+      type: String,
+      default:""
+    }
   },
   { timestamps: true }
 );

@@ -12,6 +12,7 @@ const yetToBeImplemented = async (req, res, next, msg) => {
   const user = new UserData(req);
   const text = msg || "invalid command";
   await botReply.invalidCommand(user.chatId, text);
+  res.status(200).json({ success: true });
 };
 
 export default {

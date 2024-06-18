@@ -3,41 +3,45 @@ export default {
     keyboard: [
       [
         {
-          text: "check balance ",
+          text: "Check balance ",
         },
         {
-          text: "fund wallet",
-        },
-      ],
-      [
-        {
-          text: "check countries available",
-        },
-        {
-          text: "check services available",
+          text: "Fund wallet",
         },
       ],
       [
         {
-          text: "select country",
+          text: "Check countries available",
         },
         {
-          text: "select service",
-        },
-      ],
-      [
-        {
-          text: "use a number",
+          text: "Check services available",
         },
       ],
       [
         {
-          text: "about bot ?",
+          text: "Select country",
+        },
+        {
+          text: "Select service",
         },
       ],
       [
         {
-          text: "🔴hide keyboard",
+          text: "About bot ?",
+        },
+        {
+          text: "Profile details",
+        },
+      ],
+      [
+        {
+          text: "Use a number",
+        },
+      ],
+      
+      [
+        {
+          text: "🔴Hide keyboard",
         },
       ],
     ],
@@ -49,10 +53,10 @@ export default {
     keyboard: [
       [
         {
-          text: "use this number",
+          text: "Use this number",
         },
         {
-          text: "don't use this number",
+          text: "Don't use this number",
         },
       ]
     ],

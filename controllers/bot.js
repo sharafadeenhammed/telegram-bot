@@ -38,44 +38,46 @@ const botRequest = asyncHandeler(async (req, res, next) => {
 
   // check user wallet balance...
   if (
-    userData.message === "check balance" ||
+    userData.message === "Check balance" ||
     userData.message == "/checkbalance"
   )
     await user.getUserBalance(req, res, next);
+  
+  if(userData.message === "Profile details") await user.profileDetails(req, res, next);
 
   // fund user wallet...
-  if (userData.message === "fund wallet" || userData.message == "/fundwallet")
+  if (userData.message === "Fund wallet" || userData.message == "/fundwallet")
     await user.fundWallet(req, res, next, 10);
 
   // show keyboard
-  if (userData.message === "show" || userData.message === "/show")
+  if (userData.message === "Show" || userData.message === "/show")
     await auth.showKeyboard(req, res, next);
 
   // hide keyboard
-  if (userData.message === "🔴hide keyboard" || userData.message === "/hide")
+  if (userData.message === "🔴Hide keyboard" || userData.message === "/hide")
     await auth.hideKeyboard(req, res, next);
 
-  if (userData.message === "about bot ?") await auth.aboutBot(req, res, next);
+  if (userData.message === "About bot ?") await auth.aboutBot(req, res, next);
 
-  if (userData.message === "use a number") await document.yetToBeImplemented(req, res, next, "sorry, this command is yet to be implemented it will be available soon");
+  if (userData.message === "Use a number") await document.yetToBeImplemented(req, res, next, "sorry, this command is yet to be implemented it will be available soon");
   
-  if (userData.message === "check countries available") await serviceList.listCountryAvailable(req, res, next);
+  if (userData.message === "Check countries available") await serviceList.listCountryAvailable(req, res, next);
   
-  if (userData.message === "check services available") await serviceList.listServiceAvailable(req, res, next);
+  if (userData.message === "Check services available") await serviceList.listServiceAvailable(req, res, next);
   
   if (
-    userData.message === "select country" ||
+    userData.message === "Select country" ||
     userData.message === "/country"
   ) await serviceList.countrySelect(req, res, next);
   
   if (
-    userData.message === "select service" ||
+    userData.message === "Select service" ||
     userData.message === "/service"
   ) await serviceList.serviceSelect(req, res, next);
 
-  if(userData.message === "don't use number") await document.yetToBeImplemented(req, res, next, "sorry, this command is yet to be implemented it will be available soon");
+  if(userData.message === "Don't use this number") await document.yetToBeImplemented(req, res, next, "sorry, this command is yet to be implemented it will be available soon");
   
-  if (userData.message === "use this number") await document.yetToBeImplemented(req, res, next, "sorry, this command is yet to be implemented it will be available soon");
+  if (userData.message === "Use this number") await document.yetToBeImplemented(req, res, next, "sorry, this command is yet to be implemented it will be available soon");
   
   if(countryData.find(data => data.value === String(userData.message).replace("/", "").replace(" ", ""))
   ) await user.setUserCountry(req, res, next);
