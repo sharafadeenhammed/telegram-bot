@@ -30,20 +30,23 @@ export const listServiceAvailable =async  (req, res, next) => {
 };
 
 export const countrySelect = async (req, res, next) => {
+  req.dismiss = true;
+  console.log("running country")
   const userData = new UserData(req);
   await botReply.botResponse({
     chat_id: userData.chatId,
-    text: countryPicker(userData.message),
+    text: countryPicker(),
     reply_markup: keyboard.mainKeyboard,
   });
   res.status(200).json({ success: true });
 };
 
 export const serviceSelect = async (req, res, next) => {
+  req.dismiss = true;
   const userData = new UserData(req);
   await botReply.botResponse({
     chat_id: userData.chatId,
-    text: servicePicker(userData.message),
+    text: servicePicker(),
     reply_markup: keyboard.mainKeyboard,
   });
   res.status(200).json({ success: true });

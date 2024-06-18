@@ -1,12 +1,16 @@
 import express from "express";
+import asyncHandeler from "express-async-handler";
 
 import botCommands from "../utility/botCommands.js";
-import asyncHandeler from "express-async-handler";
+import countryData from "../data/countryList.js";
+import serviceData from "../data/serviceList.js";
 import auth from "./auth.js";
 import user from "./user.js";
 import document from "./document.js";
 import UserData from "../utility/UserData.js";
 import * as serviceList from "../controllers/serviceList.js";
+
+
 
 //@ route  POST api/v1/bot/incoming
 //@ Access Public
@@ -59,16 +63,27 @@ const botRequest = asyncHandeler(async (req, res, next) => {
   
   if (userData.message === "check services available") await serviceList.listServiceAvailable(req, res, next);
   
-  if(userData.message === "select country") await serviceList.countrySelect(req, res, next);
+  if (
+    userData.message === "select country" ||
+    userData.message === "/country"
+  ) await serviceList.countrySelect(req, res, next);
   
-  if (userData.message === "select service") await serviceList.serviceSelect(req, res, next);
+  if (
+    userData.message === "select service" ||
+    userData.message === "/service"
+  ) await serviceList.serviceSelect(req, res, next);
 
   if(userData.message === "don't use number") await document.yetToBeImplemented(req, res, next, "sorry, this command is yet to be implemented it will be available soon");
   
-  if(userData.message === "use this number") await document.yetToBeImplemented(req, res, next, "sorry, this command is yet to be implemented it will be available soon");
+  if (userData.message === "use this number") await document.yetToBeImplemented(req, res, next, "sorry, this command is yet to be implemented it will be available soon");
+  
+  if(countryData.find(data => data.value === String(userData.message).replace("/", "").replace(" ", ""))
+  ) await user.setUserCountry(req, res, next);
+  
+  if (serviceData.find(data => data?.value === String(userData.message).replace("/", "").replace(" ", "")))
+    await user.setUserService(req, res, next);
 
   if (!botCommands.includes(userData.message)) await auth.invalidCommand(req, res, next);
-  res.status(200).json({ success: true });
 });
 
 export default {

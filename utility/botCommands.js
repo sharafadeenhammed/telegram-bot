@@ -15,6 +15,8 @@ export default [
   "/mydocuments",
   "create account",
   "/about bot ?",
+  "/country",
+  "/service",
   "get number for otp code",
   "/getotp",
   "check countries available",

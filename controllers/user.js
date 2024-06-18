@@ -1,6 +1,8 @@
 import User from "../model/User.js";
 import botReply from "../client/botReply.js";
 import UserData from "../utility/UserData.js";
+import countryList from "../data/countryList.js";
+import serviceList from "../data/serviceList.js"
 
 const createUser = async (req, res, next) => {
   const data = req.body;
@@ -48,6 +50,38 @@ const getUserBalance = async (req, res, next) => {
   });
 };
 
+const setUserCountry = async (req, res, next) => {
+  req.dismiss = true;
+  const userData = new UserData(req);
+  const user = await User.findOne({ chatId: userData.chatId });
+  const country = countryList.find(data => data.value === String(userData.message).replace("/", "").replace(" ", ""));
+  user.country = country.country;
+  await user.save();
+  if (!user) return await botReply.noAccountResponse(userData.chatId);
+  await botReply.botResponse({
+    chat_id: userData.chatId,
+    resize_keyboard: true,
+    one_time_keyboard: true,
+    text: `${country.country} has beebn set as your country\nthis country will be used as the country of your service\nyou can always change it by using the select "country button" or the /country command`,
+  });
+};
+
+const setUserService = async (req, res, next) => {
+  req.dismiss = true;
+  const userData = new UserData(req);
+  const user = await User.findOne({ chatId: userData.chatId });
+  const service = serviceList.find(data => data.value === String(userData.message).replace("/", "").replace(" ", ""));
+  user.service = service.name;
+  await user.save();
+  if (!user) return await botReply.noAccountResponse(userData.chatId);
+  await botReply.botResponse({
+    chat_id: userData.chatId,
+    resize_keyboard: true,
+    one_time_keyboard: true,
+    text: `${service.name} has been set as your country\nthis country will be used as the country of your service\nyou can always change it by using the select "country button" or the /service command`,
+  });
+};
+
 const currencyFormater = (amount) => {
   return `USDT ${parseFloat(amount).toFixed(2)}`
 };
@@ -57,4 +91,6 @@ export default {
   fundWallet,
   debitWallet,
   getUserBalance,
+  setUserCountry,
+  setUserService
 };
