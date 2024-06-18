@@ -88,7 +88,7 @@ const aboutBot = async (req, res, next) => {
   const userData = new UserData(req);
   await botReply.botResponse({
     chat_id: userData.chatId,
-    text: "Our Text Message Bot streamlines otp code generation by automatically generating and forwarding YOUR OTP CODE to you. \nKey features include \n 1. seamless otp code \n 2. advanced filtering \n3. automatic number generation. \nStart using our bot today to simplify and improve your otp code receiving workflow.",
+    text: "Our Text Message Bot streamlines otp code generation by automatically generating and forwarding YOUR OTP CODE to you. \nKey features include \n 1. seamless otp code \n 2. advanced filtering \n 3. automatic number generation. \nStart using our bot today to simplify and improve your otp code receiving workflow.",
     reply_markup: keyboard.mainKeyboard,
   });
   res.status(200).json({ success: true });
