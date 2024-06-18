@@ -8,7 +8,7 @@ export const listCountryAvilable = () => {
 }
 
 export const listServicesAvailable = () => {
-  const data = serviceList.map((item) => `${item.serviceCode} ${item.service}`).join("\n");
+  const data = serviceList.map((item) => `${item.name}`).join("\n");
   return "List of Services Available\n\n"  + data;
 }
 

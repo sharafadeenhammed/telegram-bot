@@ -465,10 +465,6 @@ export default Object.freeze([
     name: "MiChat"
   },
   {
-    code: "",
-    name: ""
-  },
-  {
     code: "opt15",
     name: "Microsoft (Azure, Bing, Skype, etc)"
   },
@@ -720,10 +716,7 @@ export default Object.freeze([
     code: "opt29",
     name: "Telegram"
   },
-  // {
-  //   code: "opt00029",
-  //   name: "Telegram (voice code)"
-  // },
+
   {
     code: "opt34",
     name: "Tencent QQ"
@@ -770,7 +763,7 @@ export default Object.freeze([
   },
   {
     code: "opt41",
-    name: "Twitter"
+    name: "Twitter (formerly known as X)"
   },
   {
     code: "opt160",
