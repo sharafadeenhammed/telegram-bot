@@ -52,4 +52,8 @@ export const serviceSelect = async (req, res, next) => {
   res.status(200).json({ success: true });
 };
 
+export const getServicePrice = () => {
+  
+}
+
 

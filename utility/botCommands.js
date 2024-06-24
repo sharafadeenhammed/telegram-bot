@@ -28,4 +28,6 @@ export default [
   "Don't use this number",
   "Profile details",
   "About bot ?",
+  "rent",
+  "otu",
 ];

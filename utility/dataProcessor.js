@@ -21,3 +21,13 @@ export const servicePicker = () => {
   const data = serviceList.map((item) => `/${item.name}`).join("\n");
   return "Select a Service\n\n" + data;
 }
+
+export const getCountryByCountryName = (countryName) => {
+  const data = countryList.find((item) => item.country === countryName);
+  return data;
+}
+
+export const getServiceByServiceName = (serviceName) => {
+  const data = serviceList.find((item) => item.name === serviceName);
+  return data;
+}

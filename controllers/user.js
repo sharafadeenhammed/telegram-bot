@@ -62,7 +62,7 @@ const profileDetails = async (req, res, next) => {
     chat_id: userData.chatId,
     resize_keyboard: true,
     one_time_keyboard: true,
-    text: `Country: ${user.country || "null"}\n\nService: ${user.service || "null"}\n\nBalance: ${currencyFormater(user.balance)}\n\nreceived otp: ${user.receivedSms || "null"}`,
+    text: `SELECTED COUNTRY: ${user.country || "null"}\n\nSELECTED SERVICE: ${user.service || "null"}\n\nCURRENT BALANCE: ${currencyFormater(user.balance)} \n\nONE TIME USE NUMBER: ${user.otuNumber || "null"}\n\nLAST RECEIVED OTP : ${user.receivedSms || "null"}`,
   });
   res.status(200).json({ success: true });
 };

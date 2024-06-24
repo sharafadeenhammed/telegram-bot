@@ -46,21 +46,32 @@ export default {
       ],
     ],
   },
+
+  // close keyboard
   hideKeyboard: {
     hide_keyboard: true,
   },
-  useNumber: {
-    keyboard: [
-      [
-        {
-          text: "Use this number",
-        },
-        {
-          text: "Don't use this number",
-        },
+
+  // use number
+  useNumber: () => {
+
+    return {
+      inline_keyboard: [
+        [
+          {
+            text: "Use this number",
+            callback_data: "use_number",
+          },
+          {
+            text: "Cancel",
+            callback_data: "cancel",
+          },
+        ],
       ]
-    ],
+    }
+    
   },
+  // create profile keyboard 
   createProfileKeyboard: {
     keyboard: [
       [
@@ -72,4 +83,20 @@ export default {
       ],
     ],
   },
+
+  // rent or one time use
+  rentOrOneTimeUse: {
+    inline_keyboard: [
+    [
+      {
+        text: "One time use",
+        callback_data: "otu",
+      },
+      {
+        text: "Rent",
+        callback_data: "rent",
+      },
+      ]
+    ]
+  }
 };

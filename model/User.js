@@ -46,9 +46,12 @@ const UserSchema = mongoose.Schema(
       type: String,
       default:""
     },
-    servicePhone: {
+    otuNumber: {
       type: String,
       default:""
+    },
+    otuIssuedAt: {
+      type: Date,
     },
     receivedSms: {
       type: String,

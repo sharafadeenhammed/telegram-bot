@@ -17,6 +17,10 @@ const Document = mongoose.Schema(
     userChatId: {
       type: Number,
     },
+    ref: {
+      type:mongoose.Schema.Types.ObjectId,
+      model: "User",
+    }
   },
   {
     timestamps: true,
