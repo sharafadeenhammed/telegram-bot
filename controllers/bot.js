@@ -95,6 +95,8 @@ const botRequest = asyncHandeler(async (req, res, next) => {
     await user.setUserService(req, res, next);
 
   if (!botCommands.includes(userData.message)) await auth.invalidCommand(req, res, next);
+
+  // res.status(200).json({ success: true });
 });
 
 export default {

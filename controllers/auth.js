@@ -31,7 +31,7 @@ const start = async (req, res, next) => {
   await botReply.botResponse({
     chat_id: userData.chatId,
     resize_keyboard: true,
-    text: `welcome ${userData.userName}`,
+    text: `welcome ${userData.userName || "User"}`,
     reply_markup: keyboard.mainKeyboard,
   });
   res.status(200).json({ success: true });

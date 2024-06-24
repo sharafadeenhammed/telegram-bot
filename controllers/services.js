@@ -8,6 +8,13 @@ import * as smsPvaService from "./smspva.js"
 
 export const rentOrOneTimeUseKeyboard = async (req, res, next) => {
   const userData = new UserData(req);
+  const user = await User.findOne({ chatId: userData.chatId });
+  if (!user) {
+    await botReply.noAccountResponse(userData.chatId);
+    res.status(200).json({ success: true });
+    req.dismiss = true;
+    return
+  }
     const resData = await botReply.botResponse({
       chat_id: userData.chatId,
       text: "Do you want to rent or one time use ?",
