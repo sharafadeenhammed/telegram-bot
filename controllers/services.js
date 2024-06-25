@@ -17,7 +17,7 @@ export const rentOrOneTimeUseKeyboard = async (req, res, next) => {
   }
   await botReply.botResponse({
     chat_id: userData.chatId,
-    text: "Do you want to rent or one time use ? \n\n Note: before using a number make sure ypu have selected thr correct COUNTRY and SERVICE you are about to use, check your profile for this details.",
+    text: "Do you want to rent or one time use a number ? \n\n Note: before using a number make sure you have selected the correct COUNTRY and SERVICE you are about to use, check your profile for this details.",
     reply_markup: keyboard.rentOrOneTimeUse
   });
     
