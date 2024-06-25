@@ -13,13 +13,13 @@ export const rentOrOneTimeUseKeyboard = async (req, res, next) => {
     await botReply.noAccountResponse(userData.chatId);
     res.status(200).json({ success: true });
     req.dismiss = true;
-    return
+    return;
   }
-    const resData = await botReply.botResponse({
-      chat_id: userData.chatId,
-      text: "Do you want to rent or one time use ?",
-      reply_markup: keyboard.rentOrOneTimeUse
-    });
+  await botReply.botResponse({
+    chat_id: userData.chatId,
+    text: "Do you want to rent or one time use ? \n\n Note: before using a number make sure ypu have selected thr correct COUNTRY and SERVICE you are about to use, check your profile for this details.",
+    reply_markup: keyboard.rentOrOneTimeUse
+  });
     
   res.status(200).json({ success: true });
 };
@@ -47,7 +47,7 @@ export const getOtuNumber = async (req, res, next) => {
 
   // check if user has enough balance
   if (price.price > user.balance && false) {
-    await botReply.botErrorResponse(req, res, next, "you dont have enough balance to use this service, fund your wallet and try again");
+    await botReply.botErrorResponse(req, res, next, "you don't have enough balance to use this service, fund your wallet and try again");
     res.status(200).json({ success: true});
     return
   }
