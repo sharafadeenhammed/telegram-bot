@@ -27,6 +27,7 @@ export default [
   "Use this number",
   "Don't use this number",
   "Profile details",
+  "/profile",
   "About bot ?",
   "rent",
   "otu",

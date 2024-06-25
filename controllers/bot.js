@@ -45,7 +45,10 @@ const botRequest = asyncHandeler(async (req, res, next) => {
   )
     await user.getUserBalance(req, res, next);
   
-  if(userData.message === "Profile details") await user.profileDetails(req, res, next);
+  if (
+    userData.message === "Profile details" ||
+    userData.message === "/profile"
+  ) await user.profileDetails(req, res, next);
 
   // fund user wallet...
   if (userData.message === "Fund wallet" || userData.message == "/fundwallet")
