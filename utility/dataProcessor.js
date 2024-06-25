@@ -28,6 +28,6 @@ export const getCountryByCountryName = (countryName) => {
 }
 
 export const getServiceByServiceName = (serviceName) => {
-  const data = serviceList.find((item) => item.name === serviceName);
+  const data = serviceList.find((item) => item?.name === serviceName);
   return data;
 }

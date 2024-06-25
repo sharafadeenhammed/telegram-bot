@@ -21,6 +21,7 @@ export const getOtuPrice = async (req, res, next) => {
 export const getOtuNumber = async (req, res, next) => {
   const userData = new UserData(req);
   const user = await User.findOne({ chatId: userData.chatId });
+  if(!user) return { success: false }
   const country = dataProcessor.getCountryByCountryName(user.country)
   const service = dataProcessor.getServiceByServiceName(user.service)
   try {

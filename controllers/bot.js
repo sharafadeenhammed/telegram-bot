@@ -19,7 +19,7 @@ import * as service from "../controllers/services.js"
 //@ desc receive message payload from bot
 const botRequest = asyncHandeler(async (req, res, next) => {
   const userData = new UserData(req);
-  // console.log(userData)
+  console.log(userData)
 
   // initilizing conversation with user...
   if (userData.message === "/start" || userData.message === "start")

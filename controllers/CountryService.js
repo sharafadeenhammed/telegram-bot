@@ -31,7 +31,6 @@ export const listServiceAvailable =async  (req, res, next) => {
 
 export const countrySelect = async (req, res, next) => {
   req.dismiss = true;
-  console.log("running country")
   const userData = new UserData(req);
   await botReply.botResponse({
     chat_id: userData.chatId,
