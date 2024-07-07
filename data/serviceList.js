@@ -20,7 +20,8 @@ export default Object.freeze([
   {
     code: "opt46",
     value:"Airbnb",
-    name: "Airbnb"
+    name: "Airbnb",
+    newCode:"opt46"
   },
   {
     code: "opt61",
@@ -30,7 +31,8 @@ export default Object.freeze([
   {
     code: "opt44",
     value:"Amazon",
-    name: "Amazon"
+    name: "Amazon",
+    newCode: "opt44",
   },
   {
     code: "opt10",
@@ -677,9 +679,10 @@ export default Object.freeze([
     name: "OfferUp"
   },
   {
-    code: "opt230",
+    code: "opt230", 
     value:"OkCupid",
-    name: "OkCupid"
+    name: "OkCupid 1cupis & winline",
+    newCode:"opt48",
   },
   {
     code: "opt228",
@@ -1038,7 +1041,7 @@ export default Object.freeze([
   },
   {
     code: "opt20",
-    value:"Whatsapp",
+    value:"WhatsAPP",
     name: "WhatsAPP"
   },
   // {

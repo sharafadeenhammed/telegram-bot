@@ -31,4 +31,6 @@ export default [
   "About bot ?",
   "rent",
   "otu",
+  "month",
+  "week",
 ];

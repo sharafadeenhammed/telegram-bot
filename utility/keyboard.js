@@ -98,5 +98,20 @@ export default {
       },
       ]
     ]
+  },
+
+  rentalOptionsKeyboard: {
+    inline_keyboard: [
+    [
+      {
+        text: "One Week",
+        callback_data: "week",
+      },
+      {
+        text: "One Month",
+        callback_data: "month",
+      },
+      ]
+    ]
   }
 };

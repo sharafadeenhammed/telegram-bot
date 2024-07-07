@@ -50,13 +50,52 @@ const UserSchema = mongoose.Schema(
       type: String,
       default:""
     },
+    otuNumberId: Number,
     otuIssuedAt: {
       type: Date,
     },
-    receivedSms: {
+    otuReceivedSms: {
       type: String,
       default:""
-    }
+    },
+    otuExpired: Boolean,
+    otuSercicePrice: {
+      type: String,
+      default:""
+    },
+    rentedNumber: {
+      type: String,
+      default:""
+    },
+    rentMode: {
+      type: String,
+      enum: [ "week", "month" ],
+      default:""
+    },
+    rentedIssuedAt: {
+      type: Date,
+      default:null,
+    },
+    rentalServiceValidTill: {
+      type: String,
+      default: ""
+    },
+    rentedReceivedSms: {
+      type: String,
+      default:""
+    },
+    rentalServicePrice: {
+      type: Number,
+      default: 0
+    },
+    rentedNumberId: {
+      type: Number,
+      default: 0
+    },
+    lastMessageId: String,
+    lastSentMessageId: String,
+    lastReceivedMessageId: String,
+
   },
   { timestamps: true }
 );

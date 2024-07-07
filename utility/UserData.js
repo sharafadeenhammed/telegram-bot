@@ -2,6 +2,7 @@ class UserData {
   constructor(req) {
     const data = req.body;
     this.chatId = data?.message?.from.id || data?.callback_query?.from.id;
+    this.messageId = data?.message?.message_id;
     this.message =
       data?.message?.text ||
       data?.callback_query?.data ||

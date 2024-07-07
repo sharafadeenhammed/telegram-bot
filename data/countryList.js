@@ -242,7 +242,7 @@ export default Object.freeze([
     country:"Romania 🇷🇴"
   }, {
     countryCode: "RU",
-    value:"Russia",
+    value:"Russian",
     country:"Russian Federation 🇷🇺"
   }, {
     countryCode: "RS",

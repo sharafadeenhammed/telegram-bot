@@ -75,7 +75,6 @@ const hideKeyboard = async (req, res, next) => {
 };
 
 const invalidCommand = async (req, res, next) => {
-  if(req.dismiss === true) return
   const userData = new UserData(req);
   await botReply.botResponse({
     chat_id: userData.chatId,
