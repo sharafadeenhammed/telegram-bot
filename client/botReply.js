@@ -7,7 +7,7 @@ const botResponse = async (data, req = null) => {
   try {
     return await client.post(process.env.BOT_REPLY_MESSSAGE_URL, data);
   } catch (error) {
-    console.log(error)
+    console.log("client reply error: ",error?.data)
   }
 };
 
