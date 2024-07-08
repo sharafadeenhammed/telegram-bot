@@ -4,12 +4,10 @@ import User from "../model/User.js";
 import keyboard from "../utility/keyboard.js";
 
 const botResponse = async (data, req = null) => {
-  console.log(process.env.BOT_REPLY_MESSSAGE_URL);
   try {
-    return await client.post("/sendMessage", data);
+    return await client.post(process.env.BOT_REPLY_MESSSAGE_URL, data);
   } catch (error) {
-    console.log(error);
-    console.log("client reply error: ",error?.data, error?.config?.url )
+    console.log("client reply error: ",error?.data)
   }
 };
 
