@@ -5,9 +5,9 @@ import keyboard from "../utility/keyboard.js";
 
 const botResponse = async (data, req = null) => {
   try {
-    return await client.post(process.env.BOT_REPLY_MESSSAGE_URL, data);
+    return await client.post("/sendMessage", data);
   } catch (error) {
-    console.log("client reply error: ",error?.data)
+    console.log("client reply error: ",error?.data, error?.config?.url )
   }
 };
 
