@@ -37,7 +37,7 @@ const botRequest = asyncHandeler(async (req, res, next) => {
   //   currentUser.lastReceivedMessageId = userData.messageId;
   //   currentUser.save();
   // }
-  // console.log(userData)
+  console.log(userData.message)
 
   
   // initilizing conversation with user...

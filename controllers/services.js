@@ -27,7 +27,7 @@ export const rentOrOneTimeUseKeyboard = async (req, res, next, currentUser) => {
   } 
   const response = await botReply.botResponse({
     chat_id: userData.chatId,
-    text: `Do you want to rent or one time use a number ? \n\nNOTE: Before using a number make sure you have selected the correct COUNTRY and SERVICE you are about to use, check your /profile for more details.\n${price.otu? "\nPrice for one time use: "+price.otu : ""}\n${price.week?  "Price for one week rent: "+price.week : ""}\n${price.month?  "Price for one month rent: "+price.month : ""}\n\nSELECTED COUNTRY: ${user.country? user.country : "NONE"} \nSELECTED SERVICE: ${user.service ? user.service : "NONE"} \n\n If this does not match your desired SERVICE and COUNTRY please change them  accordingly before you ONE TIME USE or RENT a number.`,
+    text: `Do you want to rent or one time use a number ? \n\nNOTE: Before using a number make sure you have selected the correct COUNTRY and SERVICE you are about to use, check your /profile for more details.\n${price.otu? "\nPrice for one time use: "+price.otu +"USDT" : ""}\n${price.week?  "Price for one week rent: "+parseFloat(price.week).toFixed(2)+"USDT" : ""}\n${price.month?  "Price for one month rent: "+parseFloat(price.month).toFixed(2)+"USDT" : ""}\n\nSELECTED COUNTRY: ${user.country? user.country : "NONE"} \nSELECTED SERVICE: ${user.service ? user.service : "NONE"} \n\n If this does not match your desired SERVICE and COUNTRY please change them  accordingly before you ONE TIME USE or RENT a number.`,
     reply_markup: keyboard.rentOrOneTimeUse
   });    
   res.status(200).json({ success: true });
