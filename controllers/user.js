@@ -114,7 +114,7 @@ const profileDetails = async (req, res, next, currentUser) => {
     resize_keyboard: true,
     one_time_keyboard: true,
     reply_markup: keyboard.mainKeyboard,
-    text: `SELECTED COUNTRY: ${user.country || "null"}\n\nSELECTED SERVICE: ${user.service || "null"}\n\nCURRENT BALANCE: ${currencyFormater(user.balance)} \n\nONE TIME USE NUMBER: \n ${ otuNumberActive ?user.otuNumber + " (Active "+ String(11 - otuDiff) +"min left)" : "  🔴No active OTU number🔴!"}\n\nLAST RECEIVED OTP from OTU number : ${user.otuReceivedSms || "null"} \n\n ${isRentalServiceActive? "RENTED NUMBER: " + user.rentedNumber : ""}\n All messages from Rented Number:\n`,
+    text: `SELECTED COUNTRY: ${user.country || "null"}\n\nSELECTED SERVICE: ${user.service || "null"}\n\nCURRENT BALANCE: ${currencyFormater(user.balance)} \n\nONE TIME USE NUMBER: \n ${otuNumberActive ? user.otuNumber + " (Active " + String(11 - otuDiff) + "min left)" : "  🔴No active OTU number🔴!"}\n\nLAST RECEIVED OTP from OTU number : ${user.otuReceivedSms || "null"} \n\n ${isRentalServiceActive ? "RENTED NUMBER: " + user.rentedNumber + "\n Valid till: " + until?.format("YYYY-MM-DD") : "🔴No active RENTED number🔴"}\n All messages from Rented Number:\n`,
   });
   // const message_id = resData.data.result.message_id
   // user.lastMessageId = message_id;

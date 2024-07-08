@@ -66,14 +66,16 @@ export const getRentalNumber = async (req, res, next, currentUser) => {
   if(!user) return { success: false }
   const country = dataProcessor.getCountryByCountryName(user.country)
   const service = dataProcessor.getServiceByServiceName(user.service)
-  // console.log("country: ", country, "\n\nservice: ", service);
+
+  // check if service is available for rental...
+  if (!service?.newCode) return { success: false, message: `Sorry ${service.name} is not Available for rental service use (one time use) instead` }
   try {
-    const resData = await smsPva.get(`/api/rent.php?method=create&service=${service.code}&country=${country.countryCode}&apikey=${process.env.SMS_PVA_API_KEY}&dtype=${userData.message}&dcount=1`)
+    const resData = await smsPva.get(`/api/rent.php?method=create&service=${service.newCode}&country=${country.countryCode}&apikey=${process.env.SMS_PVA_API_KEY}&dtype=${userData.message}&dcount=1`)
     console.log("rented number from api call: ", resData.data);
     if (resData.data.status == "1") return { success: true, ...resData.data };
     throw new Error("error processing your request please try again");
   } catch (error) {
-    return { success: false }
+    return { success: false,message:" 🔴 This service is not Available at the moment please try again later 🔴" }
   }
 }
 

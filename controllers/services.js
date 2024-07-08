@@ -6,6 +6,7 @@ import User from "../model/User.js";
 import * as dataProcessor from "../utility/dataProcessor.js"
 import * as smsPvaService from "./smspva.js"
 import { CronJob } from "cron";
+import Moment from "moment";
 
 export const rentOrOneTimeUseKeyboard = async (req, res, next, currentUser) => {
   const userData = new UserData(req);
@@ -15,9 +16,18 @@ export const rentOrOneTimeUseKeyboard = async (req, res, next, currentUser) => {
     res.status(200).json({ success: true });
     return;
   }
+
+  const price = await smsPvaService.getOtuPrice(req, res, next, user);
+  if (price.success) {
+    const smspvaPrice = parseFloat(price.price);
+    const servicePrice = parseFloat(price.price) + 1.00;
+    price.month = (smspvaPrice * 30) + 1;
+    price.week = (smspvaPrice * 7) + 1;
+    price.otu = servicePrice
+  } 
   const response = await botReply.botResponse({
     chat_id: userData.chatId,
-    text: `Do you want to rent or one time use a number ? \n\nNOTE: Before using a number make sure you have selected the correct COUNTRY and SERVICE you are about to use, check your /profile for more details. \n\nSELECTED COUNTRY: ${user.country? user.country : "NONE"} \nSELECTED SERVICE: ${user.service ? user.service : "NONE"} \n\n If this does not match your desired SERVICE and COUNTRY please change them  accordingly before you ONE TIME USE or RENT a number.`,
+    text: `Do you want to rent or one time use a number ? \n\nNOTE: Before using a number make sure you have selected the correct COUNTRY and SERVICE you are about to use, check your /profile for more details.\n${price.otu? "\nPrice for one time use: "+price.otu : ""}\n${price.week?  "Price for one week rent: "+price.week : ""}\n${price.month?  "Price for one month rent: "+price.month : ""}\n\nSELECTED COUNTRY: ${user.country? user.country : "NONE"} \nSELECTED SERVICE: ${user.service ? user.service : "NONE"} \n\n If this does not match your desired SERVICE and COUNTRY please change them  accordingly before you ONE TIME USE or RENT a number.`,
     reply_markup: keyboard.rentOrOneTimeUse
   });    
   res.status(200).json({ success: true });
@@ -159,10 +169,17 @@ export const getRentalNumber = async (req, res, next, currentUser) => {
   }  
   
   // parse price.price to float
-  price.price = parseFloat(price.price) + 1;
+  if (price.success) {
+    const smspvaPrice = parseFloat(price.price);
+    const servicePrice = parseFloat(price.price) + 1.00;
+    price.month = (smspvaPrice * 30) + 1;
+    price.week = (smspvaPrice * 7) + 1;
+    price.otu = servicePrice;
+    price.smspvaPrice = smspvaPrice;
+  } 
 
   // set price according to package selected 
-  price.price = userData.message === "week" ? price.price * 7 : price.price * 30;
+  price.price = userData.message === "week" ? price.week : price.month;
 
   if (price.price > user.balance ) {
     await botReply.botErrorResponse(req, res, next, `you don't have enough balance to use this service, fund your wallet with at least ${parseFloat(price.price).toFixed(2)} USDT and try again`);
@@ -176,7 +193,7 @@ export const getRentalNumber = async (req, res, next, currentUser) => {
   console.log("rented number after api call: ", rentalNumber);
   // check if rented number success
   if (rentalNumber.success === false) {
-    await botReply.botErrorResponse(req, res, next, " 🔴 This service is not Available at the moment please try again later 🔴"); 
+    await botReply.botErrorResponse(req, res, next, rentalNumber.message); 
     res.status(200).json({ success: true });
     return;
   }
@@ -189,11 +206,11 @@ export const getRentalNumber = async (req, res, next, currentUser) => {
   console.log("activated number after api call: ", activateNumber);
 
 
-  // await botReply.botResponse({
-  //   chat_id: userData.chatId,
-  //   text: `YOUR RENTAL PACKAGE IS ${user.service} \n\nYOUR RENTAL PACKAGE PRICE IS ${price.price}`,
-  //   reply_markup: keyboard.mainKeyboard
-  // });
+  await botReply.botResponse({
+    chat_id: userData.chatId,
+    text: `Your rental package of one ${userData.message} is now Activated ${user.service} \n\nPHONE NUMBER: +${rentalNumber.data.pnumber} \n\nThis package is valid till ${Moment(new Date(`${rentalNumber.data.until}000`)).format("yyyy-mm-dd")} \n\n  `,
+    reply_markup: keyboard.mainKeyboard
+  });
   res.status(200).json({ success: true });
   user.rentMode = userData.message;
   user.rentalServicePrice = price.price;

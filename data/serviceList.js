@@ -25,6 +25,7 @@ export default Object.freeze([
   },
   {
     code: "opt61",
+    newCode: "opt61",
     value:"Alibaba",
     name: "Alibaba (Taobao, 1688.com)"
   },
@@ -41,6 +42,7 @@ export default Object.freeze([
   },
   {
     code: "opt131",
+    newCode:"opt154",
     value:"Apple",
     name: "Apple"
   },
@@ -51,6 +53,7 @@ export default Object.freeze([
   },
   {
     code: "opt59",
+    newCode:"opt59",
     value:"Avito",
     name: "Avito"
   },
@@ -77,7 +80,8 @@ export default Object.freeze([
   {
     code: "opt17",
     value:"bet365",
-    name: "bet365"
+    name: "bet365",
+    newCode:"opt43"
   },
   {
     code: "opt192",
@@ -97,12 +101,14 @@ export default Object.freeze([
   {
     code: "opt237",
     value:"Bitpanda",
-    name: "Bitpanda"
+    name: "Bitpanda",
+    newCode:"opt199"
   },
   {
     code: "opt78",
     value:"Blizzard",
-    name: "Blizzard"
+    name: "Blizzard",
+    newCode:"opt3"
   },
   {
     code: "opt135",
@@ -122,12 +128,14 @@ export default Object.freeze([
   {
     code: "opt145",
     value:"bumble",
-    name: "bumble"
+    name: "bumble",
+    newCode:"opt199"
   },
   {
     code: "opt199",
     value:"bunq",
-    name: "bunq"
+    name: "bunq",
+    newCode:"opt21"
   },
   {
     code: "opt137",
@@ -160,7 +168,7 @@ export default Object.freeze([
   },
   {
     code: "opt176",
-    value:"Cebuana",
+    value:"ChoTot",
     name: "ChoTot"
   },
   {
@@ -181,7 +189,8 @@ export default Object.freeze([
   {
     code: "opt112",
     value:"Coinbase",
-    name: "CoinBase"
+    name: "CoinBase",
+    newCode:"opt70"
   },
   {
     code: "opt124",
@@ -216,7 +225,8 @@ export default Object.freeze([
   {
     code: "opt45",
     value:"Discord",
-    name: "Discord"
+    name: "Discord",
+    newCode:"opt147"
   },
   {
     code: "opt232",
@@ -261,12 +271,14 @@ export default Object.freeze([
   {
     code: "opt141",
     value:"EUROBET",
-    name: "EUROBET"
+    name: "EUROBET",
+    newCode:"opt68"
   },
   {
     code: "opt2",
     value:"Facebook",
-    name: "Facebook"
+    name: "Facebook",
+    newCode:"opt2"
   },
   {
     code: "opt43",
@@ -276,7 +288,8 @@ export default Object.freeze([
   {
     code: "opt215",
     value: "Fbet",
-    name: "Fbet"
+    name: "Fbet",
+    newCode:"opt171"
   },
   {
     code: "opt159",
@@ -286,7 +299,8 @@ export default Object.freeze([
   {
     code: "opt6",
     value: "Fiverr",
-    name: "Fiverr"
+    name: "Fiverr",
+    newCode:"opt6"
   },
   {
     code: "opt139",
@@ -366,7 +380,8 @@ export default Object.freeze([
   {
     code: "opt1",
     value: "Google",
-    name: "Google (YouTube, Gmail)"
+    name: "Google (YouTube, Gmail)",
+    newCode:"opt1"
   },
   {
     code: "opt30",
