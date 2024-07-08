@@ -3,8 +3,12 @@ import UserData from "../utility/UserData.js";
 import User from "../model/User.js";
 import keyboard from "../utility/keyboard.js";
 
-const botResponse = async (data, req=null) => {
-  return await client.post(process.env.BOT_REPLY_MESSSAGE_URL, data);
+const botResponse = async (data, req = null) => {
+  try {
+    return await client.post(process.env.BOT_REPLY_MESSSAGE_URL, data);
+  } catch (error) {
+    console.log(error)
+  }
 };
 
 const noAccountResponse = async (chat_id) => {
