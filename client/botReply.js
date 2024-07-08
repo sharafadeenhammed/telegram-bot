@@ -7,6 +7,7 @@ const botResponse = async (data, req = null) => {
   try {
     return await client.post("/sendMessage", data);
   } catch (error) {
+    console.log(error);
     console.log("client reply error: ",error?.data, error?.config?.url )
   }
 };
