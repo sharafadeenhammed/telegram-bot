@@ -129,7 +129,7 @@ export default Object.freeze([
     code: "opt145",
     value:"bumble",
     name: "bumble",
-    newCode:"opt199"
+    newCode:"opt165"
   },
   {
     code: "opt199",
@@ -416,7 +416,8 @@ export default Object.freeze([
   {
     code: "opt120",
     value: "Hinge",
-    name: "Hinge"
+    name: "Hinge",
+    newCode:"opt185"
   },
   {
     code: "opt144",
@@ -431,7 +432,8 @@ export default Object.freeze([
   {
     code: "opt103",
     value: "ICard",
-    name: "ICard"
+    name: "ICard",
+    newCode:"opt99"
   },
   {
     code: "opt165",
@@ -461,7 +463,8 @@ export default Object.freeze([
   {
     code: "opt16",
     value: "Instagram",
-    name: "Instagram (+Threads)"
+    name: "Instagram (+Threads)",
+    newCode:"opt16"
   },
   {
     code: "opt193",
@@ -471,7 +474,8 @@ export default Object.freeze([
   {
     code: "opt94",
     value: "JD",
-    name: "JD.com"
+    name: "JD.com",
+    newCode:"opt198"
   },
   {
     code: "opt71",
@@ -481,7 +485,8 @@ export default Object.freeze([
   {
     code: "opt175",
     value: "Klarna",
-    name: "Klarna"
+    name: "Klarna",
+    newCode:"opt156",
   },
   {
     code: "opt152",
@@ -531,12 +536,14 @@ export default Object.freeze([
   {
     code: "opt37",
     value: "Line",
-    name: "Line Messenger"
+    name: "Line Messenger",
+    newCode:"opt32"
   },
   {
     code: "opt8",
     value: "LinkedIn",
-    name: "LinkedIn"
+    name: "LinkedIn",
+    newCode:"opt8"
   },
   {
     code: "opt42",
@@ -566,12 +573,13 @@ export default Object.freeze([
   {
     code: "opt33",
     value: "Mail-Ru",
-    name: "Mail-RU"
+    name: "Mail-RU",
   },
   {
     code: "opt4",
     value: "Mail_ru",
-    name: "Mail_ru Group"
+    name: "Mail_ru Group",
+    newCode:"opt4"
   },
   {
     code: "opt100",
@@ -596,7 +604,8 @@ export default Object.freeze([
   {
     code: "opt15",
     value: "Microsoft",
-    name: "Microsoft (Azure, Bing, Skype, etc)"
+    name: "Microsoft (Azure, Bing, Skype, etc)",
+    newCode:"opt15"
   },
   {
     code: "opt156",
@@ -611,12 +620,14 @@ export default Object.freeze([
   {
     code: "opt121",
     value: "Monese",
-    name: "Monese"
+    name: "Monese",
+    newCode:"opt97"
   },
   {
     code: "opt47",
     value: "MoneyLion",
-    name: "MoneyLion"
+    name: "MoneyLion",
+    newCode:"opt75"
   },
   {
     code: "opt197",
@@ -656,7 +667,8 @@ export default Object.freeze([
   {
     code: "opt116",
     value:"Neteller",
-    name: "Neteller"
+    name: "Neteller",
+    newCode:"opt1001"
   },
   {
     code: "opt101",
@@ -697,7 +709,7 @@ export default Object.freeze([
     code: "opt230", 
     value:"OkCupid",
     name: "OkCupid 1cupis & winline",
-    newCode:"opt48",
+    // newCode:"opt48",
   },
   {
     code: "opt228",
@@ -722,12 +734,14 @@ export default Object.freeze([
   {
     code: "opt212",
     value:"OurTime",
-    name: "OurTime"
+    name: "OurTime",
+    newCode:"opt27"
   },
   {
     code: "opt181",
     value:"OZON",
-    name: "OZON.ru"
+    name: "OZON.ru",
+    newCode:"opt148"
   },
   {
     code: "opt109",
@@ -747,22 +761,26 @@ export default Object.freeze([
   {
     code: "opt162",
     value:"Payoneer",
-    name: "Payoneer"
+    name: "Payoneer",
+    newCode:"opt103"
   },
   {
     code: "opt83",
     value:"PayPal",
-    name: "PayPal + Ebay"
+    name: "PayPal + Ebay",
+    newCode:"opt83"
   },
   {
     code: "opt122",
     value:"PaySafeCard",
-    name: "Paysafecard"
+    name: "Paysafecard",
+    newCode:"opt90"
   },
   {
     code: "opt183",
     value:"PAYSEND",
-    name: "PAYSEND"
+    name: "PAYSEND",
+    newCode:"opt38"
   },
   {
     code: "opt149",
@@ -772,7 +790,8 @@ export default Object.freeze([
   {
     code: "opt84",
     value:"POF",
-    name: "POF.com"
+    name: "POF.com",
+    newCode:"opt84"
   },
   {
     code: "opt107",
@@ -842,7 +861,8 @@ export default Object.freeze([
   {
     code: "opt127",
     value: "Signal",
-    name: "Signal"
+    name: "Signal",
+    newCode:"opt153"
   },
   {
     code: "opt38",
@@ -857,7 +877,8 @@ export default Object.freeze([
   {
     code: "opt117",
     value:"Skrill",
-    name: "Skrill"
+    name: "Skrill",
+    newCode:"opt74"
   },
   {
     code: "opt90",
@@ -877,7 +898,8 @@ export default Object.freeze([
   {
     code: "opt58",
     value:"Steam",
-    name: "Steam"
+    name: "Steam",
+    newCode:"opt58"
   },
   {
     code: "opt146",
@@ -907,7 +929,8 @@ export default Object.freeze([
   {
     code: "opt29",
     value:"Telegram",
-    name: "Telegram"
+    name: "Telegram",
+    newCode:"opt29"
   },
 
   {
@@ -918,17 +941,20 @@ export default Object.freeze([
   {
     code: "opt52",
     value:"Ticketmaster",
-    name: "Ticketmaster"
+    name: "Ticketmaster",
+    newCode:"opt146"
   },
   {
     code: "opt104",
     value:"TikTok",
-    name: "TikTok"
+    name: "TikTok",
+    newCode:"opt104"
   },
   {
     code: "opt9",
     value:"Tinder",
-    name: "Tinder"
+    name: "Tinder",
+    newCode:"opt9"
   },
   {
     code: "opt235",
@@ -958,7 +984,8 @@ export default Object.freeze([
   {
     code: "opt66",
     value:"Twilio",
-    name: "Twilio"
+    name: "Twilio",
+    newCode:"opt66"
   },
   {
     code: "opt205",
@@ -968,7 +995,8 @@ export default Object.freeze([
   {
     code: "opt41",
     value:"Twitter",
-    name: "Twitter (formerly known as X)"
+    name: "Twitter (formerly known as X)",
+    newCode:"opt41"
   },
   {
     code: "opt160",
@@ -983,17 +1011,20 @@ export default Object.freeze([
   {
     code: "opt39",
     value: "verse",
-    name: "Verse"
+    name: "Verse",
+    newCode:"opt17"
   },
   {
     code: "opt11",
     value: "Viber",
-    name: "Viber"
+    name: "Viber",
+    newCode:"opt11"
   },
   {
     code: "opt130",
     value: "Vinted",
-    name: "Vinted"
+    name: "Vinted",
+    newCode:"opt31"
   },
   {
     code: "opt69",
@@ -1022,7 +1053,8 @@ export default Object.freeze([
   {
     code: "opt227",
     value:"Walmart",
-    name: "Walmart"
+    name: "Walmart",
+    newCode:"opt192"
   },
   {
     code: "opt172",
@@ -1032,7 +1064,8 @@ export default Object.freeze([
   {
     code: "opt24",
     value:"WebMoney",
-    name: "WebMoney&ENUM"
+    name: "WebMoney&ENUM",
+    newCode:"opt24"
   },
   {
     code: "opt67",
@@ -1047,7 +1080,8 @@ export default Object.freeze([
   {
     code: "opt80",
     value:"WESTSTEIN",
-    name: "WESTSTEIN"
+    name: "WESTSTEIN",
+    newCode:"opt76"
   },
   {
     code: "opt231",
@@ -1057,7 +1091,8 @@ export default Object.freeze([
   {
     code: "opt20",
     value:"WhatsAPP",
-    name: "WhatsAPP"
+    name: "WhatsAPP",
+    newCode:"opt20"
   },
   // {
   //   code: "opt00020",
@@ -1076,7 +1111,8 @@ export default Object.freeze([
   {
     code: "opt91",
     value:"Wise",
-    name: "Wise"
+    name: "Wise",
+    newCode:"opt0"
   },
   {
     code: "opt163",
@@ -1096,7 +1132,8 @@ export default Object.freeze([
   {
     code: "opt65",
     value:"Yahoo",
-    name: "Yahoo"
+    name: "Yahoo",
+    newCode:"opt65"
   },
   {
     code: "opt88",
@@ -1106,7 +1143,8 @@ export default Object.freeze([
   {
     code: "opt23",
     value:"Yandex",
-    name: "Yandex&YooMoney"
+    name: "Yandex&YooMoney",
+    newCode:"opt23"
   },
   {
     code: "opt236",

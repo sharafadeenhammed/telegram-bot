@@ -177,6 +177,20 @@ const setUserService = async (req, res, next, currentUser) => {
 export const currencyFormater = (amount) => {
   return `USDT ${parseFloat(amount).toFixed(2)}`
 };
+
+const alertAdmin = async (type = "warning", message="") => {
+  const admins = await User.find({ role: "admin" });
+  const adminPromise = admins.map(async (item) => {
+    return await botReply.botResponse({
+      chat_id: item.chatId,
+      resize_keyboard: true,
+      one_time_keyboard: true,
+      text: `${message}`,
+      reply_markup: keyboard.mainKeyboard
+    });
+  })
+  const all = Promise.all(adminPromise);
+}
  
 
 export default {
@@ -187,4 +201,6 @@ export default {
   setUserCountry,
   setUserService,
   profileDetails,
+  currencyFormater,
+  alertAdmin
 };

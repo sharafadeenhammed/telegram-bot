@@ -2,6 +2,7 @@ import UserData from "../utility/UserData.js";
 import User from "../model/User.js";
 import { smsPva } from "../client/client.js";
 import * as dataProcessor from "../utility/dataProcessor.js";
+import users from "./user.js"
 
 export const getOtuPrice = async (req, res, next, currentUser) => {
   const userData = new UserData(req);
@@ -73,9 +74,10 @@ export const getRentalNumber = async (req, res, next, currentUser) => {
     const resData = await smsPva.get(`/api/rent.php?method=create&service=${service.newCode}&country=${country.countryCode}&apikey=${process.env.SMS_PVA_API_KEY}&dtype=${userData.message}&dcount=1`)
     console.log("rented number from api call: ", resData.data);
     if (resData.data.status == "1") return { success: true, ...resData.data };
-    throw new Error("error processing your request please try again");
+    throw resData.data;
   } catch (error) {
-    return { success: false,message:" 🔴 This service is not Available at the moment please try again later 🔴" }
+    if(error.msg === "Balance is not enough") users.alertAdmin("warning", "🔴 Dear admin smspva balance is too low, please fund smspva as soon as possible for users are  aunable to use our bot services... 🔴")
+    return { success: false, message:" 🔴 This service is not Available at the moment please try again later 🔴" }
   }
 }
 

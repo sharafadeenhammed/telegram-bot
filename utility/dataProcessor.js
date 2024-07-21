@@ -8,7 +8,7 @@ export const listCountryAvilable = () => {
 }
 
 export const listServicesAvailable = () => {
-  const data = serviceList.map((item) => `${item.name}`).join("\n");
+  const data = serviceList.map((item) => `${item.name}${item.newCode ? " (Available For Rental)" : ""}`).join("\n");
   return "List of Services Available\n\n"  + data;
 }
 
@@ -18,7 +18,7 @@ export const countryPicker = () => {
 }
 
 export const servicePicker = () => {
-  const data = serviceList.map((item) => `/${item.name}`).join("\n");
+  const data = serviceList.map((item) => `/${item.name}${item.newCode ? " (Available For Rental)" : ""}`).join("\n");
   return "Select a Service\n\n" + data;
 }
 
